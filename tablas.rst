@@ -11,3 +11,10 @@ Tabla Pelicula
 +-----------+------+------+--------+----------------+-----+
 |id_pelicula|nombre|genero|duracion|fecha_de_ingreso|stock|
 +-----------+------+------+--------+----------------+-----+
+
+Tabla Alquiler
+--------------
+
++-----------+-----+---------+-----+
+|id_alquiler|Socio|Peliculas|fecha|
++-----------+-----+---------+-----+
