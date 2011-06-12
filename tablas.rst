@@ -1,0 +1,9 @@
+Tabla Socio
++--------+------+--------+---+--------+---------+-----+
+|id_socio|nombre|apellido|DNI|telefono|dirección|email|
++--------+------+--------+---+--------+---------+-----+
+
+Tabla Pelicula
++-----------+------+------+--------+----------------+-----+
+|id_pelicula|nombre|genero|duracion|fecha_de_ingreso|stock|
++-----------+------+------+--------+----------------+-----+
