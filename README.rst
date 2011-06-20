@@ -9,6 +9,19 @@ puede gestionar lo siguiente:
   - Peliculas
   - Prestamos
 
+Requisitos
+==========
+
+  * Web2py_
+
+Instrucciones
+=============
+
+Copiar la carpeta app dentro de la carpeta de web2py_ luego ejecutar desde
+la carpeta de web2py_::
+
+    $python web2py.py
+
 Colaborar
 =========
 
@@ -17,3 +30,4 @@ clonar el repositorio con el comando::
 
     git clone http://github.com/mattgaviota/pybuster.git
 
+.. _web2py: http://web2py.com
