@@ -101,6 +101,7 @@ db.define_table('clientes',
         )
 
 db.define_table('peliculas',
+        Field('id_pelicula', 'integer', required=True, unique=True),
         Field('titulo','string'),
         Field('genero','string'),
         Field('anio','integer'),
@@ -112,6 +113,7 @@ db.define_table('peliculas',
         )
 
 db.define_table('prestamos',
+        Field('id_prestamo', 'integer', required=True, unique=True),
         Field('titulo', db.peliculas),
         Field('cliente', db.clientes),
         Field('empleado', db.empleados),
