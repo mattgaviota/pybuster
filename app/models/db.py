@@ -101,13 +101,11 @@ db.define_table('clientes',
         )
 
 db.define_table('generos',
-        Field('id_genero','integer'),
         Field('genero','string'),
-        format='%(genero)s',
+        format='%(genero)s %(id)s',
         )
 
 db.define_table('peliculas',
-        Field('id_pelicula', 'integer', required=True,),
         Field('titulo','string'),
         Field('genero', db.generos),
         Field('anio', 'integer'),
@@ -119,7 +117,6 @@ db.define_table('peliculas',
         )
 
 db.define_table('prestamos',
-        Field('id_prestamo', 'integer', required=True),
         Field('titulo', db.peliculas),
         Field('cliente', db.clientes),
         Field('empleado', db.empleados),
