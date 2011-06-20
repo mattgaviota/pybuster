@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+
+<H1>Aplicacion para administracion web de video clubs</H1>
+
+(Si es que aun existen esos negocios... xD)
+
+<h5>En esta app usted podra</h5>
+<ul>
+<li>Dar de alta usuarios para administracion
+<li>Dar de alta peliculas
+<li>Dar de alta clientes
+<li>Efectuar prestamos
+<li>Tomar devoluciones
+<li>Realizar cobros
+</ul>
+<br>
+<h5>TODO</h5>
+<ol>
+<li>Poner decoradores
+<li>validar campos
+<li>Gestionar informes
+<li>cambio de turnos
+</ol>
