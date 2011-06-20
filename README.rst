@@ -9,6 +9,11 @@ puede gestionar lo siguiente:
 -Peliculas
 -Prestamos
 
-Idea original Matias Novoa, felicitaciones, sugerencias, quejas, insultos,
-puteadas a mattgaviota@gmail.com
+Colaborar
+=========
+
+Pueden dejar sus impresiones y sugerencias en esta pagina. Tambien pueden
+clonar el repositorio con el comando::
+
+    git clone http://github.com/mattgaviota/pybuster.git
 
