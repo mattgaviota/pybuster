@@ -12,7 +12,7 @@ puede gestionar lo siguiente:
 Requisitos
 ==========
 
-  * Web2py_
+  * Web2py_ (http://www.web2py.com)
 
 Instrucciones
 =============
@@ -22,6 +22,10 @@ la carpeta de web2py_::
 
     $python web2py.py
 
+Si se usa la configuracion por defecto, en el navegador introducir:
+
+    http://127.0.0.1:8000/app
+    
 Colaborar
 =========
 
