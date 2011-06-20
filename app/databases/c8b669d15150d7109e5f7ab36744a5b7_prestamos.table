@@ -45,16 +45,16 @@ I6
 sg7
 S'TIMESTAMP'
 p19
-ssS'id'
+ssS'cliente'
 p20
 (dp21
 g4
-S'id'
+S'reference clientes'
 p22
 sg6
-I1
+I3
 sg7
-S'INTEGER PRIMARY KEY AUTOINCREMENT'
+S'INTEGER REFERENCES clientes(id) ON DELETE CASCADE'
 p23
 ssS'titulo'
 p24
@@ -77,27 +77,27 @@ I8
 sg7
 S'INTEGER'
 p30
-ssS'cliente'
+ssS'id'
 p31
 (dp32
 g4
-S'reference clientes'
+S'id'
 p33
 sg6
-I3
+I1
 sg7
-S'INTEGER REFERENCES clientes(id) ON DELETE CASCADE'
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
 p34
 ssS'id_prestamo'
 p35
 (dp36
-S'sortable'
+S'type'
 p37
-I2
-sS'type'
-p38
 S'integer'
+p38
+sS'sortable'
 p39
+I2
 sS'sql'
 p40
 S'INTEGER'

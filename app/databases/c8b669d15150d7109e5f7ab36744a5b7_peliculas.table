@@ -38,13 +38,13 @@ p16
 ssS'id_pelicula'
 p17
 (dp18
-S'sortable'
+S'type'
 p19
-I2
-sS'type'
-p20
 S'integer'
+p20
+sS'sortable'
 p21
+I2
 sS'sql'
 p22
 S'INTEGER'
