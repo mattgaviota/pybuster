@@ -12,12 +12,12 @@ puede gestionar lo siguiente:
 Requisitos
 ==========
 
-  * Web2py_ (http://www.web2py.com)
+  * Web2py_ 
 
 Instrucciones
 =============
 
-Copiar la carpeta app dentro de la carpeta de web2py_ luego ejecutar desde
+Copiar la carpeta app dentro de la carpeta applications de web2py_ luego ejecutar desde
 la carpeta de web2py_::
 
     $python web2py.py
