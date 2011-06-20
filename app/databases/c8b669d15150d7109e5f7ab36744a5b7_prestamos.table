@@ -1,60 +1,60 @@
 (dp1
-S'empleado'
+S'mora'
 p2
 (dp3
 S'type'
 p4
-S'reference empleados'
+S'integer'
 p5
 sS'sortable'
 p6
-I4
+I9
 sS'sql'
 p7
-S'INTEGER REFERENCES empleados(id) ON DELETE CASCADE'
+S'INTEGER'
 p8
-ssS'fecha'
+ssS'empleado'
 p9
 (dp10
 g4
-S'datetime'
+S'reference empleados'
 p11
 sg6
 I5
 sg7
-S'TIMESTAMP'
+S'INTEGER REFERENCES empleados(id) ON DELETE CASCADE'
 p12
-ssS'costo'
+ssS'fecha'
 p13
 (dp14
 g4
-S'integer'
+S'datetime'
 p15
-sg6
-I7
-sg7
-S'INTEGER'
-p16
-ssS'devol'
-p17
-(dp18
-g4
-g11
 sg6
 I6
 sg7
 S'TIMESTAMP'
-p19
-ssS'id'
-p20
-(dp21
+p16
+ssS'cliente'
+p17
+(dp18
 g4
-S'id'
-p22
+S'reference clientes'
+p19
 sg6
-I1
+I4
 sg7
-S'INTEGER PRIMARY KEY AUTOINCREMENT'
+S'INTEGER REFERENCES clientes(id) ON DELETE CASCADE'
+p20
+ssS'devol'
+p21
+(dp22
+g4
+g15
+sg6
+I7
+sg7
+S'TIMESTAMP'
 p23
 ssS'titulo'
 p24
@@ -63,29 +63,38 @@ g4
 S'reference peliculas'
 p26
 sg6
-I2
+I3
 sg7
 S'INTEGER REFERENCES peliculas(id) ON DELETE CASCADE'
 p27
-ssS'mora'
+ssS'costo'
 p28
 (dp29
 g4
-g15
+g5
 sg6
 I8
 sg7
 S'INTEGER'
 p30
-ssS'cliente'
+ssS'id'
 p31
 (dp32
 g4
-S'reference clientes'
-p33
+g31
 sg6
-I3
+I1
 sg7
-S'INTEGER REFERENCES clientes(id) ON DELETE CASCADE'
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p33
+ssS'id_prestamo'
 p34
+(dp35
+g4
+g5
+sg6
+I2
+sg7
+S'INTEGER'
+p36
 ss.

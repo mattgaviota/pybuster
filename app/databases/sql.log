@@ -1,4 +1,4 @@
-timestamp: 2011-03-02T00:54:55.335613
+timestamp: 2011-06-20T03:12:57.486893
 CREATE TABLE auth_user(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(128),
@@ -9,21 +9,21 @@ CREATE TABLE auth_user(
     reset_password_key CHAR(512)
 );
 success!
-timestamp: 2011-03-02T00:54:55.345194
+timestamp: 2011-06-20T03:12:57.495219
 CREATE TABLE auth_group(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role CHAR(512),
     description TEXT
 );
 success!
-timestamp: 2011-03-02T00:54:55.349905
+timestamp: 2011-06-20T03:12:57.498805
 CREATE TABLE auth_membership(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
     group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE
 );
 success!
-timestamp: 2011-03-02T00:54:55.355003
+timestamp: 2011-06-20T03:12:57.502796
 CREATE TABLE auth_permission(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE,
@@ -32,7 +32,7 @@ CREATE TABLE auth_permission(
     record_id INTEGER
 );
 success!
-timestamp: 2011-03-02T00:54:55.359509
+timestamp: 2011-06-20T03:12:57.506532
 CREATE TABLE auth_event(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     time_stamp TIMESTAMP,
@@ -42,7 +42,7 @@ CREATE TABLE auth_event(
     description TEXT
 );
 success!
-timestamp: 2011-06-18T00:18:32.460636
+timestamp: 2011-06-20T03:12:57.510931
 CREATE TABLE auth_cas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
@@ -51,56 +51,60 @@ CREATE TABLE auth_cas(
     uuid CHAR(512)
 );
 success!
-timestamp: 2011-06-18T00:19:31.233534
+timestamp: 2011-06-20T03:12:57.514844
 CREATE TABLE empleados(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    documento CHAR(512),
+    documento INTEGER UNIQUE,
     nombre CHAR(512),
     apellido CHAR(512),
     foto CHAR(512),
     domicilio CHAR(512),
-    telefono CHAR(512)
-);
-success!
-timestamp: 2011-06-18T00:30:08.274579
-ALTER TABLE empleados ADD fecha_load DATE;
-timestamp: 2011-06-18T00:30:08.289852
-CREATE TABLE clientes(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    documento CHAR(512),
-    nombre CHAR(512),
-    apellido CHAR(512),
-    foto CHAR(512),
-    domicilio CHAR(512),
-    telefono CHAR(512),
+    telefono INTEGER,
     fecha_load DATE
 );
 success!
-timestamp: 2011-06-18T00:30:08.293788
-CREATE TABLE peliculas(
+timestamp: 2011-06-20T03:12:57.519234
+CREATE TABLE clientes(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    titulo CHAR(512),
-    genero CHAR(512),
-    anio INTEGER,
-    sinopsis TEXT,
-    unidades INTEGER
+    documento INTEGER UNIQUE,
+    nombre CHAR(512),
+    apellido CHAR(512),
+    foto CHAR(512),
+    domicilio CHAR(512),
+    telefono INTEGER,
+    fecha_load DATE
 );
 success!
-timestamp: 2011-06-18T00:31:12.751099
+timestamp: 2011-06-20T03:12:57.523183
+CREATE TABLE generos(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_genero INTEGER,
+    genero CHAR(512)
+);
+success!
+timestamp: 2011-06-20T03:12:57.527134
+CREATE TABLE peliculas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_pelicula INTEGER,
+    titulo CHAR(512),
+    genero INTEGER REFERENCES generos(id) ON DELETE CASCADE,
+    anio INTEGER,
+    sinopsis TEXT,
+    tapa CHAR(512),
+    unidades INTEGER,
+    fecha_ing DATE
+);
+success!
+timestamp: 2011-06-20T03:12:57.531997
 CREATE TABLE prestamos(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_prestamo INTEGER,
     titulo INTEGER REFERENCES peliculas(id) ON DELETE CASCADE,
     cliente INTEGER REFERENCES clientes(id) ON DELETE CASCADE,
     empleado INTEGER REFERENCES empleados(id) ON DELETE CASCADE,
     fecha TIMESTAMP,
-    devol TIMESTAMP
+    devol TIMESTAMP,
+    costo INTEGER,
+    mora INTEGER
 );
 success!
-timestamp: 2011-06-18T00:33:08.644711
-ALTER TABLE peliculas ADD tapa CHAR(512);
-timestamp: 2011-06-18T00:34:42.383512
-ALTER TABLE peliculas ADD fecha_ing DATE;
-timestamp: 2011-06-18T00:40:15.774315
-ALTER TABLE prestamos ADD costo INTEGER;
-timestamp: 2011-06-18T00:42:58.177784
-ALTER TABLE prestamos ADD mora INTEGER;

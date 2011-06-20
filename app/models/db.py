@@ -100,20 +100,26 @@ db.define_table('clientes',
         *fields
         )
 
-db.define_table('peliculas',
-        Field('id_pelicula', 'integer', required=True, unique=True),
-        Field('titulo','string'),
+db.define_table('generos',
+        Field('id_genero','integer'),
         Field('genero','string'),
-        Field('anio','integer'),
-        Field('sinopsis','text'),
-        Field('tapa','upload'),
-        Field('unidades','integer'),
-        Field('fecha_ing','date'),
+        format='%(genero)s',
+        )
+
+db.define_table('peliculas',
+        Field('id_pelicula', 'integer', required=True,),
+        Field('titulo','string'),
+        Field('genero', db.generos),
+        Field('anio', 'integer'),
+        Field('sinopsis', 'text'),
+        Field('tapa', 'upload'),
+        Field('unidades', 'integer'),
+        Field('fecha_ing', 'date'),
         format='%(titulo)s',
         )
 
 db.define_table('prestamos',
-        Field('id_prestamo', 'integer', required=True, unique=True),
+        Field('id_prestamo', 'integer', required=True),
         Field('titulo', db.peliculas),
         Field('cliente', db.clientes),
         Field('empleado', db.empleados),
